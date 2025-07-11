@@ -39,6 +39,8 @@ brew install \
   fzf \
   tree \
   python \
+  docker \
+  docker-compose \
   nmap \
   aircrack-ng \
   hashcat \
@@ -70,7 +72,7 @@ echo "Installing latest Node.js LTS version..."
 nvm install --lts
 
 # Use brew to install GUI tools
-brew install --cask docker vscodium bruno
+brew install --cask vscodium bruno
 echo "GUI tools installed."
 
 # Update .zshrc file if not already done
