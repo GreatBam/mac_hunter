@@ -90,10 +90,43 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Banner
 figlet "MacHunter" | lolcat
 
-# Aliases
+# Custom aliases
+# ------------------------
+## Nmap
+# ------------------------
 alias quickscan="nmap -T4 -F"
 alias fullscan="nmap -A -T4"
 alias livehosts="nmap -sn 192.168.1.0/24"
+# ------------------------
+## Docker
+# ------------------------
+alias dps="docker ps"
+alias dpsa="docker ps -a"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down -v"
+alias dcb="docker compose build"
+alias dcl="docker compose logs -f"
+alias dcr="dcd && dcu"
+alias dcrr="dcd && dcb && dcu"
+alias dcrrl="dcd && dcb && dcu && dcl"
+alias de='f(){ docker exec -it "$@" bash;  unset -f f; }; f'
+alias di="docker images"
+alias dn="docker network ls"
+alias drn="docker rm network"
+alias dri="docker rmi"
+alias dr="docker rm"
+# ------------------------
+## Git
+# ------------------------
+alias ga="git add ."
+alias gc="git commit -m"
+alias gpl="git pull"
+alias gph="git push"
+alias gco="git checkout"
+alias gd="git diff"
+alias gb="git blame"
+alias gs="git status"
+alias gl="git log"
 
 # MacHunter Setup ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 EOF
