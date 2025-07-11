@@ -1,9 +1,9 @@
 #!/bin/bash
-# Mac_Hunter - Dev + Pentest Mac bootstrap script
+# mac_hunter - Dev + Pentest Mac bootstrap script
 # Author: GreatBam
 # Description: Sets up essential CLI/GUI tools, zsh config, and aliases
 
-echo "Starting Mac_Hunter setup..."
+echo "Starting mac_hunter setup..."
 
 # Check if git is already installed
 if ! command -v git &>/dev/null; then
@@ -76,9 +76,9 @@ brew install --cask vscodium bruno
 echo "GUI tools installed."
 
 # Update .zshrc file if not already done
-if ! grep -q "# Mac_Hunter Setup ↓↓↓↓↓↓" ~/.zshrc; then
+if ! grep -q "# mac_hunter Setup ↓↓↓↓↓↓" ~/.zshrc; then
   cat <<'EOF' >> ~/.zshrc
-# Mac_Hunter Setup ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+# mac_hunter setup ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
 # Starship prompt
 eval "$(starship init zsh)"
@@ -88,7 +88,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Banner
-figlet "Mac_Hunter" | lolcat
+figlet "mac_hunter" | lolcat
 
 # Custom aliases
 # ------------------------
@@ -128,15 +128,15 @@ alias gb="git blame"
 alias gs="git status"
 alias gl="git log"
 
-# Mac_Hunter Setup ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+# mac_hunter setup ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 EOF
   echo "~/.zshrc file updated."
 else
-  echo "~/.zshrc already contains Mac_Hunter config — skipped."
+  echo "~/.zshrc already contains mac_hunter config — skipped."
 fi
 
 # Reload zsh terminal
 source ~/.zshrc || true
 echo "~/.zshrc file loaded."
 
-echo "Mac_Hunter installation fully terminated, happy hacking :) !"
+echo "mac_hunter installation fully terminated, happy hacking :) !"

@@ -1,4 +1,4 @@
-# MacHunter
+# mac_hunter
 
 > The ultimate dev + pentest macOS bootstrap script — by GreatBam
 
