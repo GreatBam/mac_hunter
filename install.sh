@@ -18,7 +18,7 @@ else
   echo "Homebrew already installed."
 fi
 
-# Remove Homebrew telemetry 
+# Remove Homebrew telemetry
 brew analytics off
 echo "Homebrew telemetry disabled."
 
