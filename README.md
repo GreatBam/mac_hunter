@@ -11,7 +11,7 @@ It’s also **safe to run on existing Macs** — tools already installed will be
 
 - ⚙️ Essential CLI tools: `git`, `tmux`, `fzf`, `python`, etc.
 - 🛡️ Pentest tools: `nmap`, `masscan`, `hashcat`, `aircrack-ng`, and more
-- 🖥️ GUI apps: Docker, VSCodium, Postman
+- 🖥️ GUI apps: Docker, VSCodium, Bruno _(Postman alternative — fully open-source)_
 - 🌠 Starship prompt + zsh plugins
 - 🧙 Aliases, banner, and terminal swag
 

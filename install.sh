@@ -70,7 +70,7 @@ echo "Installing latest Node.js LTS version..."
 nvm install --lts
 
 # Use brew to install GUI tools
-brew install --cask docker vscodium postman
+brew install --cask docker vscodium bruno
 echo "GUI tools installed."
 
 # Update .zshrc file if not already done
