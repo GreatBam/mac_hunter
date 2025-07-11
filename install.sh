@@ -47,7 +47,7 @@ brew install \
   zsh-autosuggestions \
   zsh-syntax-highlighting \
   figlet \
-  lolcat
+  lolcat || true
 
 echo "Core tools installed."
 
@@ -56,11 +56,21 @@ if [[ "$SHELL" != "$(which zsh)" ]]; then
   echo "Zsh set as default shell."
 fi
 
-brew install --cask docker vscodium postman
+echo "Installing NVM..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+echo "Installing latest Node.js LTS version..."
+nvm install --lts
+
+brew install --cask docker vscodium postman
 echo "GUI tools installed."
 
-cat <<'EOF' >> ~/.zshrc
+if ! grep -q "# MacHunter Setup ↓↓↓↓↓↓" ~/.zshrc; then
+  cat <<'EOF' >> ~/.zshrc
+
 # MacHunter Setup ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
 # Starship prompt
@@ -80,11 +90,12 @@ alias livehosts="nmap -sn 192.168.1.0/24"
 
 # MacHunter Setup ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 EOF
+  echo "~/.zshrc file updated."
+else
+  echo "~/.zshrc already contains MacHunter config — skipped."
+fi
 
-echo "~/.zshrc file updated."
-
-source ~/.zshrc
-
+source ~/.zshrc || true
 echo "~/.zshrc file loaded."
 
 echo "MacHunter installation fully terminated, happy hacking :) !"
