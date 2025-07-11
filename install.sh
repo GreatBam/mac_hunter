@@ -76,9 +76,9 @@ brew install --cask vscodium bruno
 echo "GUI tools installed."
 
 # Update .zshrc file if not already done
-if ! grep -q "# mac_hunter Setup ↓↓↓↓↓↓" ~/.zshrc; then
+if ! grep -q "# mac_hunter setup" ~/.zshrc; then
   cat <<'EOF' >> ~/.zshrc
-# mac_hunter setup ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+# mac_hunter setup
 
 # Starship prompt
 eval "$(starship init zsh)"
@@ -128,7 +128,7 @@ alias gb="git blame"
 alias gs="git status"
 alias gl="git log"
 
-# mac_hunter setup ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+# end of mac_hunter setup
 EOF
   echo "~/.zshrc file updated."
 else
