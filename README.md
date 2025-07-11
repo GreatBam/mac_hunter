@@ -15,5 +15,5 @@ This script turns a fresh Mac into a powerful dev/pentest machine in one go.
 ## Usage
 
 ```bash
-curl -s https://raw.githubusercontent.com/TheGreatBam/mac-hunter/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/TheGreatBam/mac_hunter/main/install.sh | bash
 ```
