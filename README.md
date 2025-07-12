@@ -20,5 +20,5 @@ It’s also **safe to run on existing Macs** — tools already installed will be
 ## 🚀 Quick Start
 
 ```bash
-curl -s https://raw.githubusercontent.com/TheGreatBam/mac_hunter/main/install.sh | bash
+curl -s https://raw.githubusercontent.com/GreatBam/mac_hunter/main/install.sh | bash
 ```
