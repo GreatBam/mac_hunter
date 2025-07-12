@@ -38,7 +38,8 @@ brew install \
   bat \
   fzf \
   tree \
-  python \
+  python@3.13 \
+  qemu \
   docker \
   docker-compose \
   nmap \
@@ -61,15 +62,20 @@ if [[ "$SHELL" != "$(which zsh)" ]]; then
   echo "Zsh set as default shell."
 fi
 
-# Install NVM and Node.js LTS
-echo "Installing NVM..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# Install NVM and Node.js LTS if not already installed
+if ! command -v nvm &>/dev/null && [ ! -d "$HOME/.nvm" ]; then
+  echo "Installing NVM..."
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-echo "Installing latest Node.js LTS version..."
-nvm install --lts
+  echo "Installing latest Node.js LTS version..."
+  nvm install --lts
+  nvm use --lts
+else
+  echo "NVM or Node.js already installed — skipped."
+fi
 
 # Use brew to install GUI tools
 brew install --cask vscodium bruno
@@ -112,7 +118,7 @@ alias dcrrl="dcd && dcb && dcu && dcl"
 alias de='f(){ docker exec -it "$@" bash;  unset -f f; }; f'
 alias di="docker images"
 alias dn="docker network ls"
-alias drn="docker rm network"
+alias drn="docker network rm"
 alias dri="docker rmi"
 alias dr="docker rm"
 # ------------------------
@@ -137,6 +143,6 @@ fi
 
 # Reload zsh terminal
 source ~/.zshrc || true
-echo "~/.zshrc file loaded."
+echo "~/.zshrc file loaded. Please open a new terminal or run 'exec zsh' to apply changes."
 
 echo "mac_hunter installation fully terminated, happy hacking :) !"
